@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorLayout_deployment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <include
+            android:id="@+id/toolbar_deployment_scan"
+            layout="@layout/toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/tv_shopname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:freezesText="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:maxLines="1"
+                    android:padding="2dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="Store Not Selected"
+                    android:textAlignment="center"
+                    android:textColor="#000"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="6dp"
+                    android:alpha="0.9"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/ac_tv_select_store"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:hint="Select Store Code "
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp">
+
+                        <Spinner
+                            android:id="@+id/ac_sp_select_store"
+                            style="@style/spinner_style"
+                            android:layout_margin="4dp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view_dealerboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardElevation="5dp"
+                    card_view:cardCornerRadius="2dp"
+                    card_view:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/tv_type_dealerboard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="DEALERBOARD"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:transitionName="tv_name_seeker" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:visibility="visible">
+
+                                <ProgressBar
+                                    android:id="@+id/pb_deployment_photo"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:visibility="gone" />
+
+
+                                <ImageView
+                                    android:id="@+id/iv_temp"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_alignParentTop="true"
+                                    android:background="#f0f0f0"
+                                    android:src="@mipmap/deploy_camera"
+                                    android:tag="camera"
+                                    android:visibility="gone" />
+
+
+                                <ImageView
+                                    android:id="@+id/iv_dealerboard"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_toEndOf="@+id/pb_dealerboard"
+                                    android:layout_toRightOf="@+id/pb_dealerboard"
+                                    android:background="#f0f0f0"
+                                    android:src="@mipmap/deploy_camera"
+                                    android:tag="camera"
+                                    android:visibility="visible" />
+
+
+                                <ProgressBar
+                                    android:id="@+id/pb_dealerboard"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_centerInParent="true"
+                                    android:visibility="gone" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+
+                                android:orientation="vertical"
+                                android:padding="4dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
+
+                                    <EditText
+                                        android:id="@+id/et_dealerboard_height"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:gravity="top"
+                                        android:hint="Height"
+                                        android:inputType="number"
+                                        android:singleLine="true"
+                                        android:text="" />
+
+                                    <RelativeLayout
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_weight="1">
+
+
+                                        <TextView
+                                            android:layout_width="50dp"
+                                            android:layout_height="40dp"
+                                            android:alpha="0.8"
+                                            android:foreground="?android:attr/selectableItemBackground"
+                                            android:gravity="center"
+                                            android:padding="4dp"
+                                            android:text="Inch"
+                                            android:textColor="#000" />
+                                    </RelativeLayout>
+
+                                    <TextView
+                                        android:id="@+id/tv_lat"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Latitude : "
+                                        android:textStyle="bold"
+                                        android:visibility="gone" />
+
+                                    <TextView
+                                        android:id="@+id/tv_latitude"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="normal"
+                                        android:visibility="gone" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
+
+                                    <EditText
+                                        android:id="@+id/et_dealerboard_width"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:gravity="top"
+                                        android:hint="Width"
+                                        android:inputType="number"
+                                        android:singleLine="true"
+                                        android:text="" />
+
+                                    <RelativeLayout
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_weight="1">
+
+
+                                        <TextView
+                                            android:layout_width="50dp"
+                                            android:layout_height="40dp"
+                                            android:alpha="0.8"
+                                            android:foreground="?android:attr/selectableItemBackground"
+                                            android:gravity="center"
+                                            android:padding="4dp"
+                                            android:text="Inch"
+                                            android:textColor="#000" />
+                                    </RelativeLayout>
+
+                                    <TextView
+                                        android:id="@+id/tv_lon"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Longitude : "
+                                        android:textStyle="bold"
+                                        android:visibility="gone" />
+
+                                    <TextView
+                                        android:id="@+id/tv_longitude"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="normal"
+                                        android:visibility="gone" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Address : "
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_address"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="normal" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view_form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardElevation="5dp"
+                    card_view:cardCornerRadius="2dp"
+                    card_view:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/tv_type_form"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+
+                            android:text="FORM"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_submit_btn"
+                            android:layout_width="match_parent"
+
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_width="100dp"
+                                android:layout_height="100dp">
+
+                                <ProgressBar
+                                    android:id="@+id/pb_deployment_form"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:visibility="gone" />
+
+
+                                <ImageView
+                                    android:id="@+id/iv_form"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:background="#f0f0f0"
+                                    android:src="@mipmap/deploy_camera"
+                                    android:tag="camera" />
+
+
+                                <ProgressBar
+                                    android:id="@+id/pb_form"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_centerInParent="true"
+                                    android:visibility="gone" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:orientation="vertical"
+                                android:padding="4dp"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:orientation="horizontal">
+
+                                    <EditText
+                                        android:id="@+id/et_form_height"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Height"
+                                        android:text="" />
+
+                                    <TextView
+                                        android:id="@+id/tv_lat_form"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Latitude : "
+                                        android:textStyle="bold"
+                                        android:visibility="gone" />
+
+                                    <TextView
+                                        android:id="@+id/tv_latitude_form"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="normal"
+                                        android:visibility="gone" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tv_lon_form"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Longitude : "
+                                        android:textStyle="bold"
+                                        android:visibility="gone" />
+
+                                    <EditText
+                                        android:id="@+id/et_form_width"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="top"
+                                        android:hint="Width"
+                                        android:text="" />
+
+                                    <TextView
+
+                                        android:id="@+id/tv_longitude_form"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="normal"
+                                        android:visibility="gone" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Address : "
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_address_form"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="normal" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_btnsubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="6dp"
+                    android:alpha="0.9"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom">
+
+                        <Button
+                            android:id="@+id/btn_submit_deployment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Submit"
+                            android:textStyle="bold"
+                            android:theme="@style/RedButton" />
+
+                        <ProgressBar
+                            android:id="@+id/pb_deployment"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

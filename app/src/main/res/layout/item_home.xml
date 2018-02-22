@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_home_item_deploy"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_margin="1dp"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center">
+
+            <ProgressBar
+                android:id="@+id/pb_home_item"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_home_item"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/deploy_camera" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_deployment_photo_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:maxLines="2" />
+    </LinearLayout>
+</LinearLayout>
