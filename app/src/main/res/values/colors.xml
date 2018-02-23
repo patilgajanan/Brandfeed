@@ -5,6 +5,19 @@
     <color name="colorAccent">#EB671B</color>
     <color name="colorAccents">#EB671B</color>
     <color name="black_overlay">#fff</color>
+    <color name="bg_row_background">#ce050f</color>
+    <color name="item_name">#535353</color>
+    <color name="description">#a9a9a9</color>
 
+    <color name="color_grey">#2a2d30</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorLight">#efefef</color>
+
+    <color name="colorTextHintLight">#c7c7c7</color>
+    <color name="colorFilterSelected">#c7c7c7</color>
+
+    <color name="colorGreen">#05ce08</color>
+    <color name="colorRed">#ce050f</color>
 
 </resources>
